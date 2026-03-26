@@ -1,0 +1,40 @@
+{
+  "scenario_id": "framework-agnostic-orchestration.demo.v1",
+  "title": "Framework-agnostic agent orchestration - unified task processing",
+  "description": "Orchestrate LangGraph, CrewAI, AutoGen, and raw Python agents in one workflow. No framework lock-in. One ScenarioBundle JSON.",
+
+  "agents": [
+    {
+      "role": "processor",
+      "address": "generic-processor-demo",
+      "display_name": "Generic Processor Agent",
+      "delivery_mode": "stream",
+      "create_if_missing": true
+    }
+  ],
+
+  "workflow": {
+    "steps": [
+      {
+        "step_id": "process_task",
+        "tool_id": "tool.agent.task.v1",
+        "assigned_to": "processor",
+        "step_deadline_seconds": 120
+      }
+    ]
+  },
+
+  "intent": {
+    "type": "intent.orchestration.generic_task.v1",
+    "payload": {
+      "task_id": "ORCH-2026-0015",
+      "task_type": "document_processing",
+      "input": {
+        "document_url": "s3://docs/contract-v3.pdf",
+        "actions": ["extract_clauses", "check_compliance", "generate_summary"]
+      },
+      "requested_by": "legal-pipeline"
+    },
+    "max_delivery_attempts": 3
+  }
+}
