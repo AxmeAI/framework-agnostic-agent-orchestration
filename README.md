@@ -5,7 +5,7 @@ Orchestrate LangGraph, CrewAI, AutoGen, and raw Python agents in one workflow. N
 You picked a framework. LangGraph, CrewAI, AutoGen - each one has its own orchestration layer, its own agent lifecycle, its own way of routing tasks. Now you need two of them to work together. Or you need to swap one out. Or you need a raw Python script to participate in the same workflow. Every framework says "use our orchestrator." None of them interoperate.
 
 > **Alpha** - Built with [AXME](https://github.com/AxmeAI/axme) (AXP Intent Protocol).
-> [cloud.axme.ai](https://cloud.axme.ai) - [hello@axme.ai](mailto:hello@axme.ai)
+> [cloud.axme.ai](https://cloud.axme.ai) - [contact@axme.ai](mailto:contact@axme.ai)
 
 ---
 
